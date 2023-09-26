@@ -153,18 +153,3 @@
     font-size: 30px;
 }
 
-footer {
-    padding: 35px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 40px;
-}
-
-footer a{
-    font-size: 14px;
-}
-
-footer a:hover {
-    border-bottom: 1px solid black;
-}
