@@ -1,0 +1,117 @@
+
+.bannerImg {
+    width: 100%;
+}
+
+.bannerTextContainer {
+    position: absolute;
+    top: 260px;
+    left: 50px;
+    width: 496px;
+    color: white;
+    z-index: 10;
+}
+
+.bannerText > h1 {
+    font-size: 38px;
+    font-family: 'AdihausDIN';
+    color: white;
+    margin-bottom: 6px;
+}
+
+.bannerText > p {
+    font-size: 18px;
+    line-height: 24px;
+    color: white;
+    width: 400px;
+}
+
+.bannerLinkContainer div {
+    position: relative;
+    height: 50px;
+    background-color: white;
+    margin: 14px 0;
+    font-size: 14px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    line-height: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform:uppercase;
+}
+
+.bannerLinkContainer div::before {
+    content: "";
+    position: absolute;
+    top: 0.09rem;
+    left: 0.07rem;
+    width: 100%;
+    height: 100%;
+    border: 1px solid rgb(247, 243, 243);
+  }
+
+.bannerLinkContainer div a {
+    flex-grow: 1;
+    padding: 12px 0;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.bannerLinkContainer div span {
+    font-size: 24px;
+    font-weight: bolder;
+}
+
+
+.linkOne , .linkThree {
+    width: 153px;
+}
+
+.linkTwo {
+    width: 180px;
+}
+
+.noticeAfterBanner {
+    position: relative;
+    width: 100%;
+    height: 330px;
+    text-align: center;
+    color: black;
+    background-color: #EDEDE3;
+    margin-top: -8px;
+}
+.noticeAfterBanner > div {
+    padding-top: 76px;
+}
+
+.noticeAfterBanner div > h2 {
+    font-size: 32px;
+    font-weight: 900;
+    line-height: 25px;
+    letter-spacing: 1.5px;
+    margin-bottom: 18px;
+}
+
+.noticeAfterBanner > div > p {
+    font-size: 18px;
+    margin: 0 auto;
+    max-width: 760px;
+}
+
+.noticeAfterBanner  a {
+    display: block;
+    font-size: 14px;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+    text-decoration: underline;
+    margin: 20px;
+}
+
+.footwareSection h1{
+    font-size: 40px;
+    font-weight: 900;
+    letter-spacing: -0.2px;
+    margin: 120px 32px;
+}
