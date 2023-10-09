@@ -80,31 +80,30 @@
     padding: 10px 0;
 }
 
-.tranding .trandingLinks {
+.trandingLinks {
     padding: 20px 60px;
-
 }
 
-.tranding .trandingLinks > h2 {
+.trandingLinks > h2 {
     font-size: 30px;
-    padding:  60px 0;
+    padding:  60px 0 30px;
 }
 
-.tranding .trandingLinks .linksGrid{
+.trandingLinks .linksGrid{
     display: grid;
     grid-template-rows: repeat(2,1fr);
     grid-template-columns: repeat(3,1fr);
 }
 
-.tranding .trandingLinks .linksGrid h2 {
+.trandingLinks .linksGrid h2 {
     position: relative;
-    margin: 20px;
+    margin: 20px 20px 20px 8px;
     padding: 5px;
     font-size: 42px;
     cursor: pointer;
 }
 
-.tranding .trandingLinks .linksGrid h2::after {
+.trandingLinks .linksGrid h2::after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -114,7 +113,7 @@
     background-color: black;
 }
 
-.tranding .trandingLinks .linksGrid h2:hover::after{
+.trandingLinks .linksGrid h2:hover::after{
     height: .3rem;
 }
 
@@ -153,3 +152,20 @@
     font-size: 30px;
 }
 
+.homeArticalTwo {
+    padding: 0 60px;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #F5F5E5;
+}
+
+.homeArticalTwo article{
+    min-width: 430px;
+    max-width: 600px;
+    margin: 20px 0;
+    padding: 0 20px;
+}
+
+.homeArticalTwo h2 {
+    margin-bottom: 14px;
+}

@@ -3,12 +3,22 @@ import Quotes from './Quotes';
 import Banner from './Banner';
 import './home.css';
 import Trending from './Trending';
+import TrendingLinks from '../Components/TrendingLinks';
+import ArticleOne from '../Components/ArticleOne';
+import ClubJoinBanner from '../Components/ClubJoinBanner';
+import ArticleTwo from '../Components/ArticleTwo';
+
+
 const Home = () => {
     return (
         <>
             <Banner />
             <Quotes />
             <Trending />
+            <TrendingLinks />
+            <ArticleOne />
+            <ArticleTwo />
+            <ClubJoinBanner />
         </>
     );
 };
