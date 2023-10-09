@@ -2,10 +2,12 @@ import { useState,useRef,useEffect } from 'react';
 import './navbar.css';
 import WebsiteLogo from './WebsiteLogo';
 import ExtraLinks from './ExtraLinks';
-import NavItem from './NavItem';
-import Submenu from './Submenu';
 import ShopNav from './ShopNav';
 import './responsiveStyles.css';
+import { menudb } from './db';
+import DropDownItem from './DropDownItem';
+import { ArrowBackIosNew } from '@mui/icons-material';
+
 
 const Navbar = () => {
     const [ isScrolled,setIsScrolled ] = useState(false);
@@ -33,31 +35,19 @@ const Navbar = () => {
             <header
                 className={`${isScrolled ? 'hideNavBar' : ''}`}
             >
-                <div className={`headerNotice`}> FREE STANDERD SHIPPING & RETURNS</div>
+                <div className={`headerNotice`}> FREE STANDERD SHIPPING & RETURNS <span className='arrow' ></span></div>
                 <div className="navContainer">
+
                     <WebsiteLogo />
                     <ExtraLinks />
                     <nav>
                         <div className='gridColumnOne'></div>
                         <ul className="navList">
-                            <NavItem classNames="bold" submenu={<Submenu />}>
-                                MEN
-                            </NavItem>
-                            <NavItem classNames="bold" submenu={<Submenu />}>
-                                WOMEN
-                            </NavItem>
-                            <NavItem classNames="bold" submenu={<Submenu />}>
-                                KIDS
-                            </NavItem>
-                            <NavItem submenu={<Submenu />}>
-                                GIFTS
-                            </NavItem>
-                            <NavItem submenu={<Submenu />}>
-                                SALE
-                            </NavItem>
-                            <NavItem submenu={<Submenu />}>
-                                3 STRIPE LIFE
-                            </NavItem>
+                            {menudb.map((e,i) => (
+                                <DropDownItem classNames={e?.classname} key={i} submenuitems={e}>
+                                    {e?.title}
+                                </DropDownItem>
+                            ))}
                         </ul>
                         <ShopNav />
                     </nav>

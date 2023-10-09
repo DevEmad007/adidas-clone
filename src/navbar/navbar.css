@@ -12,7 +12,7 @@
 
 :root {
     --bg-color : #ECEFF1;
-    --header-height:82px;
+    --header-height:79px;
     --header-notice : 40px;
 }
 
@@ -38,13 +38,24 @@ header {
 .headerNotice {
     height: var(--header-notice);
     width: 100%;
-    text-align: center;
-    padding-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
     font-size: 11px;
     font-weight: 700;
     letter-spacing: 1px;
     color: white;
     background-color: black;
+}
+
+.arrow {
+    width: 9px;
+    height: 9px;
+    border-bottom: 2px solid white;
+    border-right: 2px solid white;
+    transform: rotate(45deg);
+    cursor: pointer;
 }
 
 .addidasLogo {

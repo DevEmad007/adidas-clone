@@ -2,7 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Submenu from './Submenu';
 
-const NavItem = ({ classNames,toThe,children }) => {
+const DropDownItem = ({ classNames,toThe,children,submenuitems }) => {
+
     return (
         <li>
             <Link
@@ -10,8 +11,9 @@ const NavItem = ({ classNames,toThe,children }) => {
                     '' : classNames}`}>
                 {children}
             </Link>
+            <Submenu submenuitems={submenuitems?.submenu} />
         </li>
     );
 };
 
-export default NavItem;
+export default DropDownItem;
