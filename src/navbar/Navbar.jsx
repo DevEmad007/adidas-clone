@@ -5,11 +5,11 @@ import ExtraLinks from './ExtraLinks';
 import NavItem from './NavItem';
 import Submenu from './Submenu';
 import ShopNav from './ShopNav';
-import { Link } from 'react-router-dom/dist';
 
 const Navbar = () => {
     const [ isScrolled,setIsScrolled ] = useState(false);
-    const prevScroll = useRef(window.scrollY);
+    const prevScroll = useRef();
+    prevScroll.current = window.scrollY;
 
     useEffect(() => {
         const handleScroll = () => {
@@ -32,11 +32,12 @@ const Navbar = () => {
             <header
                 className={`${isScrolled ? 'hideNavBar' : ''}`}
             >
-                <div className={`headerNotice ${isScrolled ? 'hideNavBar' : ''} `}> FREE STANDERD SHIPPING & RETURNS</div>
-                <WebsiteLogo />
+                <div className={`headerNotice`}> FREE STANDERD SHIPPING & RETURNS</div>
                 <div className="navContainer">
+                    <WebsiteLogo />
                     <ExtraLinks />
                     <nav>
+                        <div className='gridColumnOne'></div>
                         <ul className="navList">
                             <NavItem classNames="bold" submenu={<Submenu />}>
                                 MEN
@@ -48,7 +49,7 @@ const Navbar = () => {
                                 KIDS
                             </NavItem>
                             <NavItem submenu={<Submenu />}>
-                                BACK TO SCHOOL
+                                GIFTS
                             </NavItem>
                             <NavItem submenu={<Submenu />}>
                                 SALE
