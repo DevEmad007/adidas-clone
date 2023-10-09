@@ -5,6 +5,7 @@ import ExtraLinks from './ExtraLinks';
 import NavItem from './NavItem';
 import Submenu from './Submenu';
 import ShopNav from './ShopNav';
+import './responsiveStyles.css';
 
 const Navbar = () => {
     const [ isScrolled,setIsScrolled ] = useState(false);
