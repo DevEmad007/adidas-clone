@@ -1,6 +1,6 @@
 
 .bannerImg {
-    width: 100vw;
+    width: 100%;
 }
 
 .bannerTextContainer {
@@ -114,4 +114,46 @@
     font-weight: 900;
     letter-spacing: -0.2px;
     margin: 120px 32px;
+}
+
+.promos {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.promos .card{
+    width: 293px;
+    margin: 6px;
+}
+
+.promos .card .cardimgContainer {
+    width: 293px;
+    height: 391px;
+}
+
+.promos .card .cardimgContainer img,
+.promos .card .cardimgContainer video{
+    width: 100%;
+}
+
+.promos .card h4{
+    margin: 10px 0;
+    font-weight: 700;
+}
+
+.promos .card p{
+    margin: 10px 0;
+    font-size: 13px;
+    color: #302f2f;
+    font-weight: 350;
+}
+
+.promos .card a{
+    margin: 10px 0;
+    font-size: 14px;
+    font-weight: 780;
+    letter-spacing: 1px;
+    text-decoration: underline;
+    color: black;
 }

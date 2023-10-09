@@ -13,8 +13,8 @@ const Trending = () => {
                 <h2>What's Trending</h2>
                 <div className="cartContainer">
                     {tranding.map(item => (
-                        <Link >
-                            <div className='card' key={item.id}>
+                        <Link key={item.id}>
+                            <div className='card' >
                                 <div className='cardImgContainer'>
                                     <FavoriteBorderOutlined className='favIcon' />
                                     <img src={item.img} alt="" />

@@ -7,6 +7,7 @@ import TrendingLinks from '../Components/TrendingLinks';
 import ArticleOne from '../Components/ArticleOne';
 import ClubJoinBanner from '../Components/ClubJoinBanner';
 import ArticleTwo from '../Components/ArticleTwo';
+import Promos from '../Components/Promos';
 
 
 const Home = () => {
@@ -15,6 +16,7 @@ const Home = () => {
             <Banner />
             <Quotes />
             <Trending />
+            <Promos />
             <TrendingLinks />
             <ArticleOne />
             <ArticleTwo />
