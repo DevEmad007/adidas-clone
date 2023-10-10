@@ -14,13 +14,13 @@ const Home = () => {
     return (
         <>
             <Banner />
-            <Quotes />
+            {/* <Quotes />
             <Trending />
             <Promos />
             <TrendingLinks />
             <ArticleOne />
             <ArticleTwo />
-            <ClubJoinBanner />
+            <ClubJoinBanner /> */}
         </>
     );
 };
