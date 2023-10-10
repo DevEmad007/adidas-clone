@@ -1,6 +1,6 @@
 import React from 'react';
 import NavItem from './NavItem';
-import { FavoriteBorderOutlined,LocalMallOutlined,Person,PersonAddAltOutlined,PersonOutlineOutlined,Search,ShoppingCartOutlined } from '@mui/icons-material';
+import { FavoriteBorderOutlined,LocalMallOutlined,Menu,Person,PersonAddAltOutlined,PersonOutlineOutlined,Search,ShoppingCartOutlined } from '@mui/icons-material';
 
 const ShopNav = () => {
     return (
@@ -15,10 +15,10 @@ const ShopNav = () => {
                         <PersonOutlineOutlined />
                         <span className="Count">1</span>
                     </NavItem>
-                    <NavItem>
+                    <NavItem classNames={'favourite'}>
                         <FavoriteBorderOutlined />
                     </NavItem>
-                    <NavItem>
+                    <NavItem classNames={'cart'}>
                         <LocalMallOutlined color="action" />
                     </NavItem>
                 </ul>

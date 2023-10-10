@@ -6,15 +6,17 @@ import ShopNav from './ShopNav';
 import './responsiveStyles.css';
 import { menudb } from './db';
 import DropDownItem from './DropDownItem';
-import { ArrowBackIosNew } from '@mui/icons-material';
+import { Menu,WidthNormal } from '@mui/icons-material';
 
 
 const Navbar = () => {
     const [ isScrolled,setIsScrolled ] = useState(false);
     const prevScroll = useRef();
     prevScroll.current = window.scrollY;
+    const [ width,setWidth ] = useState(window.innerWidth);
 
     useEffect(() => {
+        setWidth(window.innerWidth);
         const handleScroll = () => {
             if (prevScroll.current < window.scrollY) {
                 setIsScrolled(true);
@@ -35,13 +37,14 @@ const Navbar = () => {
             <header
                 className={`${isScrolled ? 'hideNavBar' : ''}`}
             >
-                <div className={`headerNotice`}> FREE STANDERD SHIPPING & RETURNS <span className='arrow' ></span></div>
+                <div className={`headerNotice`}><p> FREE STANDERD SHIPPING & RETURNS </p> <span className='arrow' ></span></div>
                 <div className="navContainer">
-
-                    <WebsiteLogo />
                     <ExtraLinks />
+                    <WebsiteLogo />
                     <nav>
-                        <div className='gridColumnOne'></div>
+                        <div className='gridColumnOne'>
+                            <Menu sx={{ fontSize: '28px',cursor: 'pointer',display: width < 950 ? 'block' : 'none' }} className='menuIcon' />
+                        </div>
                         <ul className="navList">
                             {menudb.map((e,i) => (
                                 <DropDownItem classNames={e?.classname} key={i} submenuitems={e}>
