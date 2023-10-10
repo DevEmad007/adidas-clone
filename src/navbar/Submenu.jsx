@@ -2,7 +2,6 @@ import React from 'react';
 import NavItem from './NavItem';
 
 const Submenu = ({ submenuitems }) => {
-    console.log(submenuitems.map(i => i.header));
     return (
         <div className="subMenu">
             {

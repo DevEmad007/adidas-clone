@@ -6,7 +6,7 @@ import ShopNav from './ShopNav';
 import './responsiveStyles.css';
 import { menudb } from './db';
 import DropDownItem from './DropDownItem';
-import { Menu,WidthNormal } from '@mui/icons-material';
+import { Menu } from '@mui/icons-material';
 
 
 const Navbar = () => {

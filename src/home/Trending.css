@@ -27,6 +27,7 @@
     padding: 12px 16px ;
     font-weight: 700;
     font-size: 15px;
+    letter-spacing: .02rem;
     border: 1px solid black;
     cursor: pointer;
 }
@@ -91,6 +92,9 @@
     color: gray;
     padding: 10px 0;
 }
+/*===========
+TRANDING LINKS
+=============*/
 
 .trandingLinks {
     padding: 20px 60px;
@@ -153,11 +157,13 @@
 }
 
 .clubAdd {
+    padding: 40px;
     width: 100%;
     height: 140px;
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 30px;
     background-color: #EDE734;
 }
 
@@ -165,20 +171,136 @@
     font-size: 30px;
 }
 
-.homeArticalTwo {
-    padding: 0 60px;
+.clubAdd .joinBtn {
+    position: relative;
+    height: 50px;
+    background-color: rgb(0, 0, 0);
+    margin: 14px 0;
+    font-size: 14px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    line-height: 20px;
+    text-align: center;
     display: flex;
-    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-transform:uppercase;
+}
+
+.clubAdd .joinBtn::before {
+    content: "";
+    position: absolute;
+    top: 0.11rem;
+    left: 0.1rem;
+    width: 100%;
+    height: 100%;
+    border: 1px solid rgb(0, 0, 0);
+}
+
+  .clubAdd .joinBtn a {
+    color: white;
+    flex-grow: 1;
+    padding: 12px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.clubAdd .joinBtn span {
+    color: white;
+    font-size: 28px;
+    font-weight: 800;
+}
+
+.homeArticalTwo {
+    padding: 60px;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
     background-color: #F5F5E5;
 }
 
-.homeArticalTwo article{
-    min-width: 430px;
-    max-width: 600px;
+.homeArticalTwo article {
     margin: 20px 0;
+}
+
+.homeArticalTwo article p{
     padding: 0 20px;
 }
 
 .homeArticalTwo h2 {
+    margin-left: 20px;
     margin-bottom: 14px;
+}
+
+@media (max-width:660px) {
+    
+    .tranding .cartContainer {
+        padding: 30px;
+    }
+
+    .tranding > h2:first-child {
+        margin: 40px 30px 10px;
+    }
+
+    .trandingLinks {
+        padding: 20px;
+    }
+
+    .trandingLinks > h2 {
+        font-size: 24px;
+        padding: 0 10px 10px;
+    }
+
+    .trandingLinks .linksGrid{
+        grid-template-rows: repeat(6,1fr);
+        grid-template-columns: repeat(1,1fr);
+    }
+
+    .trandingLinks .linksGrid h2 {
+        margin: 10px;
+        padding: 0;
+        font-size: 36px;
+    }
+
+    .trandingLinks .linksGrid h2::after {
+        transform: translateY(54px);
+    }
+
+    .trandingLinks .linksGrid h2:hover::after{
+        height: 0.09rem;
+    }
+
+    .clubAdd {
+        height: 215px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
+ 
+    .clubAdd h2{
+        font-size: 30px;
+        font-weight: 900;
+        letter-spacing: .06rem;
+        padding: 0 25px;
+        text-align: center;
+    }
+    
+}
+
+@media (max-width:950px) {
+    .homeArticalTwo {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        padding: 25px;
+    }
+    
+    .homeArticalTwo article p{
+        margin: 20px auto;
+        padding: auto 10px;
+    }
+    
+    .homeArticalTwo h2 {
+        margin-bottom: 20px;
+    }
 }

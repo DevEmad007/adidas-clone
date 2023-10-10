@@ -17,10 +17,10 @@ const Home = () => {
             <Quotes />
             <Trending />
             <Promos />
-            {/* <TrendingLinks /> */}
-            {/* <ArticleOne /> */}
-            {/* <ArticleTwo /> */}
-            {/* <ClubJoinBanner /> */}
+            <TrendingLinks />
+            <ArticleOne />
+            <ArticleTwo />
+            <ClubJoinBanner />
         </>
     );
 };
