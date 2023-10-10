@@ -1,7 +1,6 @@
 import React from 'react';
 import BannerImg from '../assets/banner.avif';
 import { Link } from 'react-router-dom/dist';
-import './responsiveStyle.css';
 
 const Banner = () => {
     return (

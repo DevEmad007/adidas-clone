@@ -73,7 +73,9 @@
     width: 180px;
 }
 
-
+/*====
+    Banner
+    =====*/
 @media (max-width:1225px) {
     .bannerTextContainer {
         top: 190px;
@@ -81,9 +83,7 @@
 }
 
 @media (max-width:950px) {
-    /*====
-    Banner
-    =====*/
+    
     .banner{
         position: relative;
     }
@@ -108,12 +108,22 @@
 }
 
 @media (max-width:660px) {
+    .bannerTextContainer{
+        background-color: #302f2f;
+    }
+
     .bannerTextContainer {
-        max-width: 100%;
-        top: 110%;
-        left: 30px;
+        padding: 30px;
+        min-width: 100%;
+        top: 100%;
+        left: 0px;
     }
 }
+
+/*
+Notice After Banner
+ */
+
 .noticeAfterBanner {
     position: relative;
     width: 100%;
@@ -148,6 +158,14 @@
     letter-spacing: 1.5px;
     text-decoration: underline;
     margin: 20px;
+}
+
+@media (max-width:660px) {
+    .noticeAfterBanner {
+        margin-top: 350px;
+        padding: 20px;
+        height: fit-content;
+    }
 }
 
 .footwareSection h1{
