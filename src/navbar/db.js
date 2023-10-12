@@ -959,7 +959,7 @@ export const menudb = [
         ]
     },
     {
-        title: 'SAlES',
+        title: 'SALES',
         classname: '',
         path: '/men',
         submenu: [

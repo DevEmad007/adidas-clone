@@ -1,3 +1,14 @@
+:root {
+    --bg:  #242526;
+    --bg-accent: #484a4d;
+    --text-color: #dadce1;
+    --nav-size: 60px;
+    --border: 1px solid #474a4d;
+    --border-radius: 8px;
+    --speed: 500ms; 
+  }
+  
+
 @media (max-width:1275px) {
     nav {
         width: 100%;
@@ -61,7 +72,7 @@
         margin-right: 25px;
     }
 
-    .addidasLogo {
+    .navContainer .addidasLogo {
         top: 62px;
         left: 50%;
         margin-left: -50px;
@@ -69,7 +80,7 @@
         width: auto;
     }
     
-    .addidasLogoTwo {
+    .navContainer .addidasLogoTwo {
         top: 60px;
         left: 50%;
         margin-left: -10px;
@@ -109,6 +120,25 @@
         display: none;
     }
 
+    .navList > li {
+        font-size: 18px;
+        width: 100%;
+    }
+
+    .navList > li > a {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .navList li:hover .subMenu{
+        display: none;
+    }
+
+    .navList > li:hover {
+        border-bottom: none;
+    }
+
     .inputContainer > input {
       display: none;
     }
@@ -118,5 +148,110 @@
         background-color: #fff;
     }
 
+    .gridColumnOne svg{
+        display: inline-block;
+    }
+
+    .mobileNav {
+        display: block;   
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 100vw;  
+        background-color: white;
+        transition: 0.5s;
+        z-index: 30;
+    }
+
+    .navHeader .addidasLogo {
+        position: relative;
+        top: 0;
+        left: 50%;
+        margin-left: -50px;
+        height: 25px;
+        width: auto;
+    }
+    
+    .navHeader .addidasLogoTwo {
+        position: relative;
+        top: 0px;
+        left: 50%;
+        margin-left: 0px;
+        height: 27px;
+        width: auto;
+    }
+    
+    .navHeader {
+        height: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-bottom: 1px solid  #d6d6d6;
+    }
+    
+    .mobileNav .mobileMenu {
+        padding: 25px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+
+    .mobileMenu li {
+        width: 100%;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        padding: 0.5rem;
+        color: black;
+    }
+
+    .mobileMenu  button {
+        padding: 6px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 20px;
+        font-weight: 600;
+        letter-spacing: 1px;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }  
+      
+      /* CSSTransition classes  */
+      .menu-primary-enter {
+        position: absolute;
+        transform: translateX(-110%);
+      }
+      .menu-primary-enter-active {
+        transform: translateX(0%);
+        transition: all var(--speed) ease;
+      }
+      .menu-primary-exit {
+        position: absolute;
+      }
+      .menu-primary-exit-active {
+        transform: translateX(-110%);
+        transition: all var(--speed) ease;
+      }  
+      
+      .menu-secondary-enter {
+        transform: translateX(110%);
+      }
+      .menu-secondary-enter-active {
+        transform: translateX(0%);
+        transition: all var(--speed) ease;
+      }
+      .menu-secondary-exit {
+      }
+      .menu-secondary-exit-active {
+        transform: translateX(110%);
+        transition: all var(--speed) ease;
+      }
+      
 
 }
