@@ -7,7 +7,7 @@ import './responsiveStyles.css';
 import { menudb } from './db';
 import DropDownItem from './DropDownItem';
 import { Close,Menu } from '@mui/icons-material';
-import MDNavItem from './MDNavItem';
+import MDNavItem from './DropDownItemSecondery';
 import MobileDropDown from './MobileDropDown';
 
 
@@ -34,7 +34,7 @@ const Navbar = () => {
             window.removeEventListener('scroll',handleScroll);
         };
     },[]);
-    console.log(open);
+
     return (
         <>
             <header

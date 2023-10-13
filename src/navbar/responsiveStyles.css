@@ -149,7 +149,7 @@
     }
 
     .gridColumnOne svg{
-        display: inline-block;
+        display: inline;
     }
 
     .mobileNav {
@@ -157,8 +157,8 @@
         position: fixed;
         top: 0;
         left: 0;
-        bottom: 0;
-        width: 100vw;  
+        min-height: 100vh;
+        width: 100%;  
         background-color: white;
         transition: 0.5s;
         z-index: 30;
@@ -189,23 +189,6 @@
         align-items: center;
         border-bottom: 1px solid  #d6d6d6;
     }
-    
-    .mobileNav .mobileMenu {
-        padding: 25px;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: flex-start;
-    }
-
-    .mobileMenu li {
-        width: 100%;
-        height: 50px;
-        display: flex;
-        align-items: center;
-        padding: 0.5rem;
-        color: black;
-    }
 
     .mobileMenu  button {
         padding: 6px;
@@ -220,38 +203,89 @@
         border: none;
         outline: none;
         cursor: pointer;
-    }  
-      
-      /* CSSTransition classes  */
-      .menu-primary-enter {
-        position: absolute;
-        transform: translateX(-110%);
-      }
-      .menu-primary-enter-active {
-        transform: translateX(0%);
-        transition: all var(--speed) ease;
-      }
-      .menu-primary-exit {
-        position: absolute;
-      }
-      .menu-primary-exit-active {
-        transform: translateX(-110%);
-        transition: all var(--speed) ease;
-      }  
-      
-      .menu-secondary-enter {
-        transform: translateX(110%);
-      }
-      .menu-secondary-enter-active {
-        transform: translateX(0%);
-        transition: all var(--speed) ease;
-      }
-      .menu-secondary-exit {
-      }
-      .menu-secondary-exit-active {
-        transform: translateX(110%);
-        transition: all var(--speed) ease;
-      }
-      
+    }
+    
+    .mobileNav .mobileMenu {    
+        position: relative;
+        padding: 5px 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        overflow-x: hidden;
+        overflow-y: hidden;
+    }
 
+    .mobileNav .mobileMenu  ul {
+        width: 100%;
+        min-height: 100vh;
+        transition: 500ms;
+    }
+
+    .mobileMenu li {
+        width: 100%;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        padding: 0.5rem;
+        color: black;
+    }
+
+    .mobileMenu a {
+        z-index: 40;
+        color: black;
+    }
+
+    .seconderyMenu, .seconderyLinks{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        transition:all 500ms;
+    }
+    
+    .seconderyMenu{
+        transform: translateX(110%);
+    }
+
+    .seconderyLinks {
+        transform: translateX(110%);
+    }
+
+    .hideMainMenu1 > ul{
+        transform: translateX(-110%);       
+    }
+    
+    .hideMainMenu2 > ul{
+        transform: translateX(-220%);       
+    }
+
+    .hideSeconderyMenu {
+        opacity: 0;
+        pointer-events: none;
+    }
+    
+    .hideSeconderyLinks {
+        opacity: 0;
+        pointer-events: none;
+    }
+    
+    .showMainMenu1 > ul {
+        transform: translateX(0%);
+    }
+    
+    .showMainMenu2 > ul {
+        transform: translateX(110%);
+    }
+
+    .showSeconderyMenu{
+        opacity: 1;
+    }
+    
+    .showSeconderyLink {
+        opacity: 1;
+        pointer-events: all;
+    }
+
+      
 }

@@ -1,86 +1,84 @@
 import { ArrowBackIosNew } from '@mui/icons-material';
 import React,{ useState,useEffect,useRef } from 'react';
-import { CSSTransition,SwitchTransition } from 'react-transition-group';
+import DropDownItemSecondery from './DropDownItemSecondery';
 
 const MobileDropDown = ({ menudb }) => {
+    const [ activeLink,setActiveLink ] = useState('main');
     const [ activeMenu,setActiveMenu ] = useState('main');
-    const nodeRef = useRef();
 
     function DropdownItem(props) {
+        const [ activeBefore,setActiveBefore ] = useState();
+        console.log(activeBefore);
         return (
-            <li className={`menu-item`}>
-                <button onClick={() => props.goToMenu && setActiveMenu(props.goToMenu)}>
+            <li >
+                <button onClick={() => {
+                    setActiveMenu('second');
+                    props.goToMenu &&
+                        setActiveBefore(props.goToMenu);
+                    setActiveLink(props.goToMenu);
+                }}>
                     {props.children}
-                    <ArrowBackIosNew sx={{ transform: 'rotate(180deg)' }} />
+                    {props.icon}
                 </button>
+                {props.submenuitems?.submenu &&
+                    <div
+                        className={` seconderyMenu  
+                    ${activeLink === props.submenuitems?.title || activeMenu === 'links' ? 'showSeconderyMenu' : 'hideSeconderyMenu'}`}>
+                        <ul>
+                            <button onClick={() => {
+                                setActiveMenu('main');
+                                setActiveLink('main');
+                            }}>
+                                <span style={{ display: 'flex',alignItems: 'center',gap: '14px' }}>
+                                    <ArrowBackIosNew />
+                                    {props.submenuitems?.title}
+                                </span>
+                                {props.iconRight}
+                            </button>
+                            {
+                                props.submenuitems?.submenu.map((el,i) => (
+                                    <DropDownItemSecondery
+                                        activeLinkBefore={props.submenuitems?.title}
+                                        setActiveMenu={setActiveMenu}
+                                        activeLink={activeLink}
+                                        setActiveLink={setActiveLink}
+                                        goToMenu={el.header}
+                                        classNames={el?.classname}
+                                        key={i}
+                                        iconRight={<ArrowBackIosNew sx={{ transform: 'rotate(180deg)' }} />}
+                                        submenu={el}
+                                    >
+                                        {el.header}
+                                    </DropDownItemSecondery>
+                                ))
+                            }
+                        </ul>
+                    </div>
+                }
             </li>
         );
     }
-    console.log(activeMenu);
+
     return (
         <>
-            {/* <SwitchTransition mode='out-in'> */}
-            <CSSTransition
-                in={activeMenu === 'main'}
-                timeout={500}
-                classNames="menu-primary"
-                unmountOnExit
-                ref={nodeRef}>
-                <ul className="mobileMenu">
+            <div
+                className={`mobileMenu menuPrimary 
+            ${activeMenu === 'main' ? 'showMainMenu1' : activeMenu === 'second' ? ' hideMainMenu1 ' : activeMenu === 'links' ? 'hideMainMenu2 ' : ''}`} >
+                <ul >
                     {menudb.map((e,i) => (
-                        <>
-                            <DropdownItem
-                                goToMenu={e?.title}
-                                classNames={e?.classname}
-                                key={i}
-                                submenuitems={e}>
-                                {e?.title}
-                            </DropdownItem>
-                        </>
+                        <DropdownItem
+                            goToMenu={`${e?.title}`}
+                            classNames={e?.classname}
+                            key={i}
+                            submenuitems={e}
+                            icon={<ArrowBackIosNew sx={{ transform: 'rotate(180deg)' }} />}
+                        >
+                            {e?.title}
+                        </DropdownItem>
                     ))}
                 </ul>
-            </CSSTransition>
-            {/* </SwitchTransition> */}
-
-
-            {menudb.map((e,i) => (
-                <>
-                    <CSSTransition
-                        in={activeMenu === `${e?.header}`}
-                        timeout={500}
-                        classNames="menu-secondary"
-                        unmountOnExit>
-                        <>
-                            {
-                                e?.submenu.map((el,i) => (
-                                    <DropdownItem
-                                        key={i}
-                                        goToMenu={el?.header}>
-                                        {el?.header}
-                                    </DropdownItem>
-                                ))
-                            }
-                        </>
-                    </CSSTransition>
-                </>
-            ))}
-            <CSSTransition
-                in={activeMenu === 'MAN'}
-                timeout={500}
-                classNames="menu-primary"
-                unmountOnExit>
-                <ul className="mobileMenu">
-                    <DropdownItem goToMenu="main" >
-                        <h2>My Tutorial</h2>
-                    </DropdownItem>
-                    <DropdownItem >HTML</DropdownItem>
-                    <DropdownItem >CSS</DropdownItem>
-                    <DropdownItem >JavaScript</DropdownItem>
-                    <DropdownItem >Awesome!</DropdownItem>
-                </ul>
-            </CSSTransition>
+            </div>
         </>
-
     );
 };
 

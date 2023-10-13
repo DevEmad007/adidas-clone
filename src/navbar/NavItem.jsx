@@ -6,7 +6,7 @@ const NavItem = ({ classNames,toThe,children }) => {
     return (
         <li>
             <Link
-                className={`navLink ${classNames === undefined ?
+                className={` ${classNames === undefined ?
                     '' : classNames}`}>
                 {children}
             </Link>
