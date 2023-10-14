@@ -24,7 +24,7 @@ const DropDownItemSecondery = (props) => {
               ${activeLink === submenu?.header ? 'showSeconderyLinks' : 'hideSeconderyLinks'}`}
             >
                 <ul>
-                    <button onClick={() => {
+                    <button className="bold" onClick={() => {
                         setActiveMenu('second');
                         setActiveLink(activeLinkBefore);
                     }}>

@@ -122,6 +122,10 @@
     overflow-x: scroll;
 }
 
+.promos::-webkit-scrollbar {
+    display: none;
+  }
+
 .promos .card{
     max-width: 293px;
     margin: 6px;
@@ -180,7 +184,7 @@
     }
 
     .dynamicImgContainer{
-        width: 100dvw;
+        width: 100%;
         overflow-x: hidden;
         object-fit:fill;
     }

@@ -5,17 +5,16 @@ import DropDownItemSecondery from './DropDownItemSecondery';
 const MobileDropDown = ({ menudb }) => {
     const [ activeLink,setActiveLink ] = useState('main');
     const [ activeMenu,setActiveMenu ] = useState('main');
+    const [ activeBefore,setActiveBefore ] = useState();
 
     function DropdownItem(props) {
-        const [ activeBefore,setActiveBefore ] = useState();
-        console.log(activeBefore);
         return (
             <li >
-                <button onClick={() => {
+                <button className={`${props.classNames !== undefined && props.classNames}`} onClick={() => {
                     setActiveMenu('second');
+                    setActiveBefore(props.goToMenu);
                     props.goToMenu &&
-                        setActiveBefore(props.goToMenu);
-                    setActiveLink(props.goToMenu);
+                        setActiveLink(props.goToMenu);
                 }}>
                     {props.children}
                     {props.icon}
@@ -23,9 +22,9 @@ const MobileDropDown = ({ menudb }) => {
                 {props.submenuitems?.submenu &&
                     <div
                         className={` seconderyMenu  
-                    ${activeLink === props.submenuitems?.title || activeMenu === 'links' ? 'showSeconderyMenu' : 'hideSeconderyMenu'}`}>
+                    ${activeLink === props.submenuitems?.title || props.submenuitems?.title === activeBefore ? 'showSeconderyMenu' : 'hideSeconderyMenu'}`}>
                         <ul>
-                            <button onClick={() => {
+                            <button className={`seconderyBtn ${props.classNames !== undefined && props.classNames}`} onClick={() => {
                                 setActiveMenu('main');
                                 setActiveLink('main');
                             }}>

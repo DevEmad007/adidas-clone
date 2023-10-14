@@ -153,6 +153,7 @@
     }
 
     .mobileNav {
+        position: relative;
         display: block;   
         position: fixed;
         top: 0;
@@ -188,6 +189,7 @@
         justify-content: center;
         align-items: center;
         border-bottom: 1px solid  #d6d6d6;
+        z-index: 30;
     }
 
     .mobileMenu  button {
@@ -196,29 +198,35 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        font-size: 20px;
-        font-weight: 600;
+        font-size: 17px;
         letter-spacing: 1px;
         background-color: transparent;
         border: none;
         outline: none;
         cursor: pointer;
     }
+
+    .mobileMenu  button .bold {
+        font-weight: 900;
+    }
     
     .mobileNav .mobileMenu {    
-        position: relative;
-        padding: 5px 10px;
+        padding: 6px 14px 0px;
+        min-height: 100vh;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
         align-items: flex-start;
-        overflow-x: hidden;
-        overflow-y: hidden;
+        overflow-y: scroll;
+        scrollbar-width: none;
     }
+
+    .mobileMenu::-webkit-scrollbar {
+        display: none;
+      }
 
     .mobileNav .mobileMenu  ul {
         width: 100%;
-        min-height: 100vh;
         transition: 500ms;
     }
 
@@ -238,12 +246,24 @@
 
     .seconderyMenu, .seconderyLinks{
         position: absolute;
-        top: 0;
+        top: 0px;
         left: 0;
         width: 100%;
         transition:all 500ms;
     }
+
+    .seconderyMenu > ul {
+        margin-top: 10px;
+    }
+
+    .seconderyLinks > ul > button {
+        margin-left: -5px;
+    }
     
+    .seconderyLinks > ul {
+        margin-left: 10px;
+    }
+
     .seconderyMenu{
         transform: translateX(110%);
     }
@@ -285,7 +305,5 @@
     .showSeconderyLink {
         opacity: 1;
         pointer-events: all;
-    }
-
-      
+    }  
 }
