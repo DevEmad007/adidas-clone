@@ -69,17 +69,34 @@ const Footer = () => {
         }
 
     ];
+    const [ ipAddress,setIpAddress ] = useState();
+    const [ country,setCountry ] = useState();
 
-    const [ locationData,setLocationData ] = useState(null);
     useEffect(() => {
-        getLocation();
+        fetch('https://api.ipify.org?format=json')
+            .then(response => response.json())
+            .then(data => setIpAddress(data.ip));
     },[]);
 
-    async function getLocation() {
-        const res = await axios.get("http://ip-api.com/json");
-        if (res.status === 200)
-            setLocationData(res.data);
-    }
+    useEffect(() => {
+        fetch("https://api.ipfind.com/?ip=" + ipAddress)
+            .then(res => res.json())
+            .then(data => setCountry(data.country));
+    },[ ipAddress ]);
+
+    // var xmlhttp = new XMLHttpRequest();
+    // var ip_address = ipAddress;
+    // var url = "https://api.ipfind.com/?ip=" + ip_address;
+
+    // xmlhttp.onreadystatechange = function () {
+    //     if (this.readyState == 4 && this.status == 200) {
+    //         var result = JSON.parse(this.responseText);
+    //         setCountry(result.country);
+    //     }
+    // };
+
+    // xmlhttp.open("GET",url,true);
+    // xmlhttp.send();
 
     return (
         <footer className='footer'>
@@ -101,7 +118,7 @@ const Footer = () => {
                     <Link>Privacy Policy</Link>
                     <Link>Terms and Conditions</Link>
                 </div>
-                <p>©{year} adidas {locationData?.country}, Inc.</p>
+                <p>©{year} adidas {country}, Inc.</p>
             </div>
         </footer>
     );
