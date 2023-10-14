@@ -145,7 +145,7 @@
 
     .inputContainer {
         min-width: max-content;
-        background-color: #fff;
+        background-color: transparent;
     }
 
     .gridColumnOne svg{
@@ -306,4 +306,18 @@
         opacity: 1;
         pointer-events: all;
     }  
+}
+
+@media (max-width:380px) {
+    .navContainer .addidasLogo {
+        top: 64px;
+        margin-left: -50px;
+        height: 18px;
+    }
+    
+    .navContainer .addidasLogoTwo {
+        top: 62px;
+        margin-left: -23px;
+        height: 20px;
+    }
 }

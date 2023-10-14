@@ -165,7 +165,7 @@
 
 @media (max-width:1260px) {
     .promos {
-        margin-left: 25px;
+        margin: 0;
         justify-content: flex-start;
         overflow-x: scroll;
     }
@@ -178,6 +178,9 @@
 }
 
 @media (max-width:950px) {
+    .promos {
+        margin: 0;
+    }
     
     .banner{
         position: relative;
@@ -208,7 +211,7 @@
     }
 
     .bannerTextContainer {
-        padding: 30px;
+        padding: 25px;
         min-width: 100%;
         top: 100%;
         left: 0px;
@@ -221,3 +224,21 @@
     }
 }
 
+@media (max-width:390px) {
+    .bannerTextContainer {
+        padding: 15px;
+    }
+
+    .bannerText > h1 {
+        text-wrap:nowrap;
+        font-size: 34px;
+        font-weight: 900;
+    }
+}
+
+@media (max-width:355px) {
+    .bannerText > h1 {
+        font-size: 30px;
+        font-weight: 900;
+    }
+}

@@ -8,6 +8,8 @@
     text-decoration: none;
     list-style: none;
     color: black;
+    -webkit-tap-highlight-color: transparent; /* Safari/Chrome */
+    tap-highlight-color: transparent; /* Firefox */
 }
 
 :root {

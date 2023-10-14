@@ -231,16 +231,22 @@ TRANDING LINKS
     margin-bottom: 14px;
 }
 
-@media (max-width:660px) {
-    
+@media (max-width:950px) {
     .tranding .cartContainer {
-        padding: 30px;
+        padding: 0px;
+    }
+
+    .tranding{
+        margin: 0 20px;
     }
 
     .tranding > h2:first-child {
-        margin: 40px 30px 10px;
+        margin: 30px 0px ;
+        margin-right: 20px;
     }
+}
 
+@media (max-width:660px) {
     .trandingLinks {
         padding: 20px;
     }
@@ -266,11 +272,11 @@ TRANDING LINKS
     }
 
     .trandingLinks .linksGrid h2:hover::after{
-        height: 0.09rem;
+        height: 0.28rem;
     }
 
     .clubAdd {
-        height: 215px;
+        min-height: 215px;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -278,11 +284,11 @@ TRANDING LINKS
         gap: 20px;
     }
  
-    .clubAdd h2{
+    .clubAdd > h2{
         font-size: 30px;
         font-weight: 900;
         letter-spacing: .06rem;
-        padding: 0 25px;
+        padding: 0;
         text-align: center;
     }
     
@@ -302,5 +308,29 @@ TRANDING LINKS
     
     .homeArticalTwo h2 {
         margin-bottom: 20px;
+    }
+}
+
+@media (max-width:380px) {
+    .tranding > h2 {
+        padding: 8px 12px ;
+        font-size: 13px;
+        letter-spacing: .02rem;
+    }
+
+    .clubAdd {
+        gap: 0;
+    }
+ 
+    .clubAdd > h2{
+        font-size: 28px;
+        padding: 0 ;
+    }
+}
+
+@media (max-width:320px) {
+    .clubAdd > h2{
+        font-size: 24px;
+        padding: 0 ;
     }
 }
