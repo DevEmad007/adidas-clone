@@ -40,16 +40,16 @@ const Navbar = ({ isScrolled }) => {
                         <ShopNav />
                     </nav>
                 </div>
-                <div className="mobileNav" style={{ transform: open ? 'translateX(0%)' : 'translateX(-110%)' }} >
-                    <div className="navHeader">
-                        <WebsiteLogo />
-                        <Close
-                            onClick={() => setOpen(!open)}
-                            sx={{ position: 'absolute',top: '15px',right: '18px',fontSize: '32px',cursor: 'pointer',zIndex: 20 }} />
-                    </div>
-                    <MobileDropDown menudb={menudb}></MobileDropDown>
-                </div>
             </header>
+            <div className="mobileNav" style={{ transform: open ? 'translateX(0%)' : 'translateX(-110%)' }} >
+                <div className="navHeader">
+                    <WebsiteLogo />
+                    <Close
+                        onClick={() => setOpen(!open)}
+                        sx={{ position: 'absolute',top: '15px',right: '18px',fontSize: '32px',cursor: 'pointer',zIndex: 20 }} />
+                </div>
+                <MobileDropDown menudb={menudb}></MobileDropDown>
+            </div>
             <div className={'contentPusher'}></div>
         </>
     );

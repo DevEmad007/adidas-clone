@@ -252,12 +252,13 @@
         transition:all 500ms;
     }
 
-    .seconderyMenu > ul {
+    .seconderyMenu > ul ,
+    .seconderyLinks > ul {
         margin-top: 10px;
     }
 
     .seconderyLinks > ul > button {
-        margin-left: -5px;
+        margin-left: -6px;
     }
     
     .seconderyLinks > ul {
