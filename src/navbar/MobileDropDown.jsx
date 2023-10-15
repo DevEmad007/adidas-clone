@@ -22,7 +22,8 @@ const MobileDropDown = ({ menudb }) => {
                 {props.submenuitems?.submenu &&
                     <div
                         className={` seconderyMenu  
-                    ${activeLink === props.submenuitems?.title || props.submenuitems?.title === activeBefore ? 'showSeconderyMenu' : 'hideSeconderyMenu'}`}>
+                    ${activeLink === props.submenuitems?.title
+                                || props.submenuitems?.title === activeBefore ? '' : 'hideSeconderyMenu'}`}>
                         <ul>
                             <button className={`seconderyBtn ${props.classNames !== undefined && props.classNames}`} onClick={() => {
                                 setActiveMenu('main');
@@ -61,8 +62,8 @@ const MobileDropDown = ({ menudb }) => {
     return (
         <>
             <div
-                className={`mobileMenu menuPrimary 
-            ${activeMenu === 'main' ? 'showMainMenu1' : activeMenu === 'second' ? ' hideMainMenu1 ' : activeMenu === 'links' ? 'hideMainMenu2 ' : ''}`} >
+                className={`mobileMenu 
+            ${activeMenu === 'main' ? 'showMainMenu1' : activeMenu === 'second' ? ' showMainMenu2 ' : activeMenu === 'links' ? 'showMainMenu3 ' : ''}`} >
                 <ul >
                     {menudb.map((e,i) => (
                         <DropdownItem

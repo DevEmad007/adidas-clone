@@ -4,6 +4,7 @@ import { ArrowBackIosNew } from "@mui/icons-material";
 import { Link } from "react-router-dom";
 
 const DropDownItemSecondery = (props) => {
+    const [ activeBefore,setActiveBefore ] = useState();
 
     const { submenu,goToMenu,activeLink,setActiveMenu,setActiveLink,activeLinkBefore } = props;
 
@@ -11,6 +12,7 @@ const DropDownItemSecondery = (props) => {
         <li>
             <button onClick={() => {
                 props.setActiveMenu('links');
+                setActiveBefore(activeLinkBefore);
                 props.goToMenu && setActiveLink(goToMenu);
             }}>
                 <span style={{ display: 'flex',alignItems: 'center',gap: '14px' }}>
@@ -21,7 +23,7 @@ const DropDownItemSecondery = (props) => {
             </button>
             <div
                 className={` seconderyLinks
-              ${activeLink === submenu?.header ? 'showSeconderyLinks' : 'hideSeconderyLinks'}`}
+              ${activeLink === submenu?.header || activeBefore == activeLinkBefore ? 'showSeconderyLinks' : 'hideSeconderyLinks'}`}
             >
                 <ul>
                     <button className="bold" onClick={() => {

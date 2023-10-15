@@ -227,7 +227,7 @@
 
     .mobileNav .mobileMenu  ul {
         width: 100%;
-        transition: 500ms;
+        transition: 1000ms;
     }
 
     .mobileMenu li {
@@ -249,7 +249,12 @@
         top: 0px;
         left: 0;
         width: 100%;
-        transition:all 500ms;
+        transition:transform 2000ms ease-in-out;
+    }
+    
+    .seconderyLinks{
+        left: 100%;
+
     }
 
     .seconderyMenu > ul ,
@@ -265,48 +270,40 @@
         margin-left: 10px;
     }
 
-    .seconderyMenu{
-        transform: translateX(110%);
-    }
-
-    .seconderyLinks {
-        transform: translateX(110%);
-    }
-
-    .hideMainMenu1 > ul{
-        transform: translateX(-110%);       
+    /* transitions */
+    
+    .showMainMenu3 > ul {
+        transform: translateX(-220%);  
     }
     
-    .hideMainMenu2 > ul{
-        transform: translateX(-220%);       
-    }
-
-    .hideSeconderyMenu {
-        opacity: 0;
-        pointer-events: none;
-    }
-    
-    .hideSeconderyLinks {
-        opacity: 0;
-        pointer-events: none;
+    .showMainMenu2 > ul {
+        transform: translateX(-110%);  
     }
     
     .showMainMenu1 > ul {
         transform: translateX(0%);
     }
-    
-    .showMainMenu2 > ul {
+
+    .seconderyMenu{
         transform: translateX(110%);
     }
 
-    .showSeconderyMenu{
-        opacity: 1;
+    .seconderyLinks {
+        transform: translateX(10%);
+    }
+
+    .hideSeconderyLinks {
+        transform: translateX(220%);
+    }
+
+    .hideSeconderyMenu {
+        transform: translateX(330%);
     }
     
-    .showSeconderyLink {
-        opacity: 1;
-        pointer-events: all;
-    }  
+    .showSeconderyLinks {
+        transform: translateX(10%);
+    }
+
 }
 
 @media (max-width:380px) {
