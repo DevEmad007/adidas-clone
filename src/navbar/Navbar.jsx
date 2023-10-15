@@ -11,29 +11,8 @@ import MDNavItem from './DropDownItemSecondery';
 import MobileDropDown from './MobileDropDown';
 
 
-const Navbar = () => {
-    const [ isScrolled,setIsScrolled ] = useState(false);
-    const prevScroll = useRef();
-    prevScroll.current = window.scrollY;
-    const [ width,setWidth ] = useState(window.innerWidth);
+const Navbar = ({ isScrolled }) => {
     const [ open,setOpen ] = useState(false);
-
-    useEffect(() => {
-        setWidth(window.innerWidth);
-        const handleScroll = () => {
-            if (prevScroll.current < window.scrollY && width > 950) {
-                setIsScrolled(true);
-            }
-            else {
-                setIsScrolled(false);
-            }
-        };
-        window.addEventListener('scroll',handleScroll);
-
-        return () => {
-            window.removeEventListener('scroll',handleScroll);
-        };
-    },[]);
 
     return (
         <>
@@ -66,7 +45,7 @@ const Navbar = () => {
                         <WebsiteLogo />
                         <Close
                             onClick={() => setOpen(!open)}
-                            sx={{ position: 'absolute',top: '15px',right: '18px',fontSize: '32px',cursor: 'pointer',display: width < 950 ? 'block' : 'none',zIndex: 20 }} />
+                            sx={{ position: 'absolute',top: '15px',right: '18px',fontSize: '32px',cursor: 'pointer',zIndex: 20 }} />
                     </div>
                     <MobileDropDown menudb={menudb}></MobileDropDown>
                 </div>
