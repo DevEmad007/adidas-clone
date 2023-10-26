@@ -7,7 +7,6 @@ import './responsiveStyles.css';
 import { menudb } from './db';
 import DropDownItem from './DropDownItem';
 import { Close,Menu } from '@mui/icons-material';
-import MDNavItem from './DropDownItemSecondery';
 import MobileDropDown from './MobileDropDown';
 
 

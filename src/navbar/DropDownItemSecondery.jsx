@@ -23,14 +23,14 @@ const DropDownItemSecondery = (props) => {
             </button>
             <div
                 className={` seconderyLinks
-              ${activeLink === submenu?.header || activeBefore == activeLinkBefore ? 'showSeconderyLinks' : 'hideSeconderyLinks'}`}
+              ${activeLink === submenu?.header || activeBefore == activeLinkBefore ? '' : 'hideSeconderyLinks'}`}
             >
                 <ul>
                     <button className="bold" onClick={() => {
                         setActiveMenu('second');
                         setActiveLink(activeLinkBefore);
                     }}>
-                        <span style={{ display: 'flex',alignItems: 'center',gap: '14px' }}>
+                        <span style={{ display: 'flex',alignItems: 'center',gap: '14px',textTransform: 'uppercase' }}>
                             <ArrowBackIosNew />
                             {submenu?.header}
                         </span>

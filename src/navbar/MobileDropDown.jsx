@@ -16,7 +16,7 @@ const MobileDropDown = ({ menudb }) => {
                     props.goToMenu &&
                         setActiveLink(props.goToMenu);
                 }}>
-                    {props.children}
+                    {props.children} {/*list  */}
                     {props.icon}
                 </button>
                 {props.submenuitems?.submenu &&
@@ -29,9 +29,9 @@ const MobileDropDown = ({ menudb }) => {
                                 setActiveMenu('main');
                                 setActiveLink('main');
                             }}>
-                                <span style={{ display: 'flex',alignItems: 'center',gap: '14px' }}>
+                                <span style={{ display: 'flex',alignItems: 'center',gap: '14px',textTransform: 'uppercase' }}>
                                     <ArrowBackIosNew />
-                                    {props.submenuitems?.title}
+                                    {props.submenuitems?.title}{/*back button */}
                                 </span>
                                 {props.iconRight}
                             </button>

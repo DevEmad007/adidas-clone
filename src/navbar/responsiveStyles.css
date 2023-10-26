@@ -270,6 +270,10 @@
         margin-left: 10px;
     }
 
+    .mobileMenu{
+        overflow: hidden;
+    }
+
     /* transitions */
     
     .showMainMenu3 > ul {

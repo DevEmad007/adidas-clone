@@ -71,7 +71,7 @@ export const newArrivlas = [
     },
     {
         id: 4,
-        title: "Women's Originals Multi adidas Originals x KSENIASCHNAIDER Fringed Shirt Dress",
+        title: "Women's Originals Multi adidas Originals ",
         price: 70,
         img: "https://assets.adidas.com/images/w_280,h_280,f_auto,q_auto:sensitive/f76b00e73bb54c298ed0bf9ada71a931_9366/adidas-originals-x-kseniaschnaider-3-stripes-jeans.jpg"
     },
@@ -83,7 +83,7 @@ export const newArrivlas = [
     },
     {
         id: 6,
-        title: "Women's Originals Black adidas Originals x KSENIASCHNAIDER 3-Stripes Jeans",
+        title: "Women's  adidas Originals 3-Stripes Jeans",
         price: 70,
         img: "https://assets.adidas.com/images/w_280,h_280,f_auto,q_auto:sensitive/a485e8ba52284c26a19468d3f046d62b_9366/adidas-originals-x-kseniaschnaider-fringed-shirt-dress.jpg"
     },
