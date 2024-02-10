@@ -39,6 +39,8 @@ const MobileDropDown = ({ menudb }) => {
                                 props.submenuitems?.submenu.map((el,i) => (
                                     <DropDownItemSecondery
                                         activeLinkBefore={props.submenuitems?.title}
+                                        activeBefore={activeBefore}
+                                        setActiveBefore={setActiveBefore}
                                         setActiveMenu={setActiveMenu}
                                         activeLink={activeLink}
                                         setActiveLink={setActiveLink}
